@@ -8,16 +8,18 @@ meteor-base
 mongo
 reactive-var
 
-standard-minifier-css
-standard-minifier-js
-es5-shim
+#standard-minifier-css
+#standard-minifier-js
+#es5-shim
 ecmascript
-typescript
+#typescript
 shell-server
-hot-module-replacement
+#hot-module-replacement
 
 
 static-html
-react-meteor-data       # React higher-order component for reactively tracking Meteor data
+#react-meteor-data       # React higher-order component for reactively tracking Meteor data
 
-montiapm:agent@3.0.0-beta.13
+#montiapm:agent@3.0.0-beta.13
+zodern:types
+jorgenvatle:vite

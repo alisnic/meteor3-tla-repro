@@ -104,6 +104,11 @@
 
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+    "skipLibCheck": true,                           
+    "baseUrl": ".",
+    "paths": {
+      /* Support absolute /imports/* with a leading '/' */
+      "meteor/*": [".meteor/local/types/packages.d.ts"]
+    },
   }
 }

@@ -1,7 +1,25 @@
+/**
+ * These modules are automatically imported by jorgenvatle:vite.
+ * You can commit these to your project or move them elsewhere if you'd like,
+ * but they must be imported somewhere in your Meteor mainModule.
+ *
+ * More info: https://github.com/JorgenVatle/meteor-vite#lazy-loaded-meteor-packages
+ **/
+import "../_vite-bundle/server/_entry.mjs"
+/** End of vite auto-imports **/
 import { Meteor } from 'meteor/meteor';
 import { LinksCollection } from '/imports/api/links';
 import Andrei from './tla.js'
 
+async function test() {
+  if (Meteor.isServer) {
+    const { runTransactionWithRetry } = await import('./internals.js')
+    runTransactionWithRetry()
+  } else {
+    console.log('client!');
+    
+  }
+}
 
 async function insertLink({ title, url }) {
   await LinksCollection.insertAsync({ title, url, createdAt: new Date() });
