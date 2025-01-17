@@ -10,16 +10,8 @@ import "../_vite-bundle/server/_entry.mjs"
 import { Meteor } from 'meteor/meteor';
 import { LinksCollection } from '/imports/api/links';
 import Andrei from './tla.js'
+import { isoFunc } from "../imports/api/iso.js";
 
-async function test() {
-  if (Meteor.isServer) {
-    const { runTransactionWithRetry } = await import('./internals.js')
-    runTransactionWithRetry()
-  } else {
-    console.log('client!');
-    
-  }
-}
 
 async function insertLink({ title, url }) {
   await LinksCollection.insertAsync({ title, url, createdAt: new Date() });
